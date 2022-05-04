@@ -1,0 +1,70 @@
+// {
+  // "languageserver": {
+  //   "intelephense": {
+  //     "command": "intelephense",
+  //     "args": ["--stdio"],
+  //     "filetypes": ["php"],
+  //     "initializationOptions": {
+  //       "storagePath": "/tmp/intelephense"
+  //     }
+  //   },
+  //
+  // "clangd": {
+  //   "command": "clangd",
+  //   "rootPatterns": ["compile_flags.txt", "compile_commands.json"],
+  //   "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"]
+  // }
+  // }
+// }
+ {
+"diagnostic-languageserver.filetypes": {
+  "php": ["phpcs"]
+},
+"diagnostic-languageserver.linters": {
+  "phpcs": {
+    "command": "./vendor/bin/phpcs",
+    "debounce": 300,
+    "rootPatterns": ["composer.json", "composer.lock", "vendor", ".git"],
+    "args": ["--report=emacs", "-s", "-"],
+    "offsetLine": 0,
+    "offsetColumn": 0,
+    "sourceName": "phpcs",
+    "formatLines": 1,
+    "formatPattern": [
+      "^.*:(\\d+):(\\d+):\\s+(.*)\\s+-\\s+(.*)(\\r|\\n)*$",
+      {
+        "line": 1,
+        "column": 2,
+        "message": 4,
+        "security": 3
+      }
+    ],
+    "securities": {
+      "error": "error",
+      "warning": "warning"
+    }
+  }
+},
+"diagnostic-languageserver.formatFiletypes": {
+  "php": "phpcbf"
+},
+"diagnostic-languageserver.formatters": {
+  "phpcbf": {
+    "command": "./vendor/bin/phpcbf",
+    "rootPatterns": ["composer.json", "composer.lock", "vendor", ".git"],
+    "args": ["%file"],
+    "isStdout": false,
+    "doesWriteToFile": true
+  }
+},
+"python.pythonPath": "python3.8",
+"suggest.echodocSupport": true,
+"suggest.maxCompleteItemCount": 20,
+"coc.preferences.formatOnSaveFiletypes": ["javascript", "typescript", "typescriptreact", "json", "javascriptreact", "typescript.tsx"],
+"eslint.filetypes": ["javascript", "typescript", "typescriptreact", "javascriptreact", "typescript.tsx"],
+"diagnostic.errorSign": "•",
+"diagnostic.warningSign": "•",
+"diagnostic.infoSign": "•",
+"clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/14.0.0/clangd_14.0.0/bin/clangd"
+ }
+
