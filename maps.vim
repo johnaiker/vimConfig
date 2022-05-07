@@ -11,9 +11,9 @@ vmap < <gv
 vmap > >gv
 
 "fuzzy search | Busqueda de archivos
-let g:dashboard_default_executive ='fzf'
-
-let g:UltiSnipsExpandTrigger="<C-b>"
+" let g:dashboard_default_executive ='fzf'
+"
+" let g:UltiSnipsExpandTrigger="<C-b>"
 
 "Tecla Lider
 let mapleader=" "
@@ -37,7 +37,7 @@ nnoremap <Leader>> 10<C-w>>
 nnoremap <Leader>< 10<C-w><
 
 "Search a file
-map <Leader>p :Files<CR>
+" map <Leader>p :Files<CR>
 
 "--------------------------
 "BuffeLine Keymaps
@@ -49,23 +49,3 @@ nnoremap <S-l> :BufferLineCycleNext<CR>
 nnoremap <S-h> :BufferLineCyclePrev<CR>
 
 
-"--------------------------
-" Mappings for CoCList
-"--------------------------
-
-" Show all diagnostics.
-nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
-" Manage extensions.
-nnoremap <silent><nowait> <space>x  :<C-u>CocList extensions<cr>
-" Show commands.
-nnoremap <silent><nowait> <space>dc  :<C-u>CocList commands<cr>
-" Find symbol of current document.
-nnoremap <silent><nowait> <space>o  :<C-u>CocList outline<cr>
-" Search workspace symbols.
-nnoremap <silent><nowait> <space>.  :<C-u>CocList -I symbols<cr>
-" Do default action for next item.
-nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
-" Do default action for previous item.
-nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
-" Resume latest coc list.
-nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
